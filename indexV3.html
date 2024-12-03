@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="currency">
+      <option value="1.0507">USD</option>
+      <option value="0.82898">GBP</option>
+      <option value="0.9316">CHF</option>
+    </select>
+    <input type="text" id="amount" />
+    <button id="convert-btn">Konvertēt</button>
+    <p id="output"></p>
+
+    <script>
+      let convertBtn = document.getElementById("convert-btn");
+      let currencySelect = document.getElementById("currency");
+      let amount = document.getElementById("amount");
+
+      convertBtn.addEventListener("click", handleClick);
+
+      function handleClick() {
+        console.log(currencySelect.value * amount.value);
+      }
+
+      switch (currencySelect.value) {
+        case "usd":
+          console.log(1.0507 * amount.value);
+
+          break;
+        case "gbp":
+          console.log(0.82898 * amount.value);
+
+          break;
+        case "chf":
+          console.log(0.9316 * amount.value);
+
+          break;
+
+        default:
+          console.log("kkas nav");
+          break;
+      }
+    </script>
+  </body>
+</html>
